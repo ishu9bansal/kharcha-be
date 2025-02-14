@@ -16,6 +16,9 @@ app.use(cors({
     origin: true,
 }));
 
+// Routes
+app.use('/api/expenses', require('./routes/expense'));
+
 // Start the Server
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
