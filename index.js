@@ -7,6 +7,8 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 
+const expenseRouter = require('./routes/expense');
+
 const app = express();
 
 // Middleware
@@ -17,7 +19,7 @@ app.use(cors({
 }));
 
 // Routes
-app.use('/api/expenses', require('./routes/expense'));
+app.use('/api/expenses', expenseRouter);
 
 // Start the Server
 const PORT = process.env.PORT;

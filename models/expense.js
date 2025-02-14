@@ -6,8 +6,8 @@ const ExpenseSchema = new mongoose.Schema({
     amount: { type: Number, required: true },
     timestamp: { type: Date, required: true },
     category: { type: String, required: true, enum: Object.values(CATEGORY) },
-    paymentMode: { type: String, required: true, enum: Object.value(PAYMENT_MODE) },
-    recipient: { type: String, required: true, enum: Object.value(RECIPIENT) },
+    paymentMode: { type: String, required: true, enum: Object.values(PAYMENT_MODE) },
+    recipient: { type: String, required: true, enum: Object.values(RECIPIENT) },
 }, {
     timestamps: true,
 });
