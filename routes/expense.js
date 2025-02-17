@@ -15,8 +15,9 @@ router.post('/', async (req, res) => {
 
 // Get all expenses
 router.get('/', async (req, res) => {
+    const { limit = 5, skip = 0 } = req.query;
     try {
-        const expenses = await Expense.find();
+        const expenses = await Expense.find().sort({ updatedAt: -1 }).skip(skip).limit(limit);
         res.send(expenses);
     } catch (error) {
         res.status(500).send(error);
